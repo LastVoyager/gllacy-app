@@ -1,9 +1,11 @@
-import logo from './img/svg/logo.svg';
+import logo from '.././img/svg/logo.svg';
+
+import CartList from './Cart/CartList';
+
 import './Header.css';
-import './@media.css';
 import './Header_drop-down_comp.css';
 
-function Header () {
+function Header (props) {
     return (
         <div className="header" id="header">
             <div className="header-container">
@@ -61,11 +63,11 @@ function Header () {
                                 <div className="enter-content">
                                     <form>
                                         <section className="e-mail">
-                                            <label className="visually-hidden" for="user-e-mail"></label>
+                                            <label className="visually-hidden" htmlFor="user-e-mail"></label>
                                             <p><input className="e-mail-user" id="user-e-mail" type="text" name="e-mail" placeholder="Електронная почта"></input></p> {/* added closing tag */}
                                         </section>
                                         <section className="password">
-                                            <label className="visually-hidden" for="password-login"></label>
+                                            <label className="visually-hidden" htmlFor="password-login"></label>
                                             <p><input className="password-user" id="password-login" type="text" name="password" placeholder="Пароль"></input></p> {/* added closing tag */}
                                         </section>
                                     </form>
@@ -80,20 +82,7 @@ function Header () {
                             </li>
                             <li className="cart">
                                 <a className="cart-button" href="catalog.html">Пусто</a>
-                                <div className="cart-content">
-                                <div className="choosen-list">
-                                        <div className="choosen">
-                                            <button className="close" type="button">Закрыть</button>
-                                            <p>Пломбир с апельсиновьім джемом</p>
-                                            <p>1.5 кг. х 200грн.</p>
-                                            <p>300 грн.</p>
-                                        </div>
-                                        <span>Итого: 720грн.</span>
-                                </div>
-                                    <form className="zalupa">
-                                        <button className="button" type="submit">Оформить заказ</button>
-                                    </form>
-                                </div>
+                                <CartList items={props.items} onDelete={props.onDeleteItem}></CartList>
                             </li>
                         </ul>
                     </div>

@@ -14,10 +14,12 @@
     .our-features {
         margin: 0px 27px 27px 27px;
     }
-    .main-container img {
+    .main-container
+    .ice-cream-1,
+    .ice-cream-2,
+    .ice-cream-3 {
         position: absolute;
-        z-index: -1;
-       
+      
         height: auto;
         width: 100%;
         top:-570px;
@@ -241,9 +243,11 @@
         margin: 20px 0px 0px 0px;
         padding: 0px;
     }
-    .main-proposition img {
+    .main-container
+    .ice-cream-1,
+    .ice-cream-2,
+    .ice-cream-3 {
         position: absolute;
-        z-index: -1;
        
         height: auto;
         width: 100%;
@@ -355,9 +359,11 @@
         font-size: 22px;
         line-height: 24px;
     }
-    .main-proposition img {
+    .main-container
+    .ice-cream-1,
+    .ice-cream-2,
+    .ice-cream-3 {
         position: absolute;
-        z-index: -1;
        
         height: auto;
         width: 100%;

@@ -1,7 +1,9 @@
-header {
+.header {
+    position: relative;
     min-height: 100%;
     font: inherit;
     width: auto;
+    z-index: 4;
 }
 
 .header-container {
@@ -16,15 +18,14 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 0px 27px 0px 27px;
-    z-index: 4;
+    
 }
 
 .main-navigation ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 8px;
-    margin-top: 0px;
+    
     margin-bottom: 0px;
 }
 .options {
@@ -41,14 +42,16 @@ header {
     line-height: 18px;
 }
 .right-option li {
-    margin: 0px 0px  0px  15px;
+    
 }
 .main-navigation .right-option {
     margin-left: auto;
+    padding-bottom: 8px;
 }
 .main-navigation .left-option {
     margin-right: auto;
     padding-left: 14px;
+    padding-bottom: 8px;
 }
 
 
@@ -73,13 +76,13 @@ header {
     background-color: #f8f7f4;
 }
 .search:hover .search-button::after {
-    background-image: url(./img/svg/loupe.svg);
+    background-image: url(.././img/svg/loupe.svg);
 }
 .right-option .search-button::after {
     position: absolute;
     content: "";
    
-    background-image: url(./img/svg/loupe.svg);
+    background-image: url(.././img/svg/loupe.svg);
     opacity: 1;
     width: 17px;
     height: 17px;
@@ -135,6 +138,7 @@ header {
     position: relative;
     background-color: #a1b5aa;
     padding: 7px 14px 7px 35px;
+    margin-left: 15px;
     border-radius: 25px 25px 25px 25px;
     cursor: pointer;
 }
@@ -145,7 +149,7 @@ header {
 .right-option .enter-button::after {
     position: absolute;
     content: "";
-    background-image: url(./img/svg/entrance.svg);
+    background-image: url(.././img/svg/entrance.svg);
     width: 20px;
     height: 19px;
     margin-left: -62px;
@@ -164,6 +168,7 @@ header {
 /* CART */
 .cart {
     cursor: pointer;
+    margin-left: 15px;
 }
 .right-option .cart {
     position: relative;
@@ -179,7 +184,7 @@ header {
 .right-option .cart-button::after {
     position: absolute;
     content: "";
-    background-image: url(./img/svg/basket.svg);
+    background-image: url(.././img/svg/basket.svg);
     width: 20px;
     height: 19px;
     margin-left: -73px;
