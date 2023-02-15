@@ -14,7 +14,7 @@ function App() {
   const createRequest = (info) => {
     /* const replaceGoods = data.map( data => { return data; }); */
     setGoods(info);
-    console.log(goods);
+    
   };
 
 
@@ -26,6 +26,7 @@ function App() {
 
   return (
     <div className='body'>
+      {console.log(goods)}
       <Header items={goods} onDeleteItem={HandleItemRemove}></Header>
       <Main sendData={createRequest}></Main>
       <footer></footer>
