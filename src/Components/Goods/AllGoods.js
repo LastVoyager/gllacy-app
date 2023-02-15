@@ -11,18 +11,17 @@ function AllGoods (props) {
 
   const formRequest = info => {
     if ((request.findIndex(item => item.id === info.id)) < 0) {
-      setRequest([...request, info]);
+      const data = [...request, info]
+      setRequest(data);
+      props.sendData(data);
     }
-    props.sendData(request);
-    console.log(request);
   }
   
   return (
     <ul className="populars">
       {Goods.slice(0, 4).map(info => (
         <Good
-          click={formRequest}
-          
+          click={() => formRequest(info)}
           key={info.id} 
           info={info}
           >

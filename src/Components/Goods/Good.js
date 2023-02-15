@@ -13,7 +13,7 @@ const Good = (props) => {
                 <img src={props.info.image}/>
                 <p className="price">{props.info.price} &#36;/kg</p>
                 <p className="description">{props.info.title}</p>
-                <button className="button" onClick={handleClick}>Добавити в корзину</button>
+                <button className="button" onClick={props.click}>Добавити в корзину</button>
             </div>
             {props.children}
         </li>
