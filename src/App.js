@@ -8,12 +8,13 @@ import './@media.css';
 
 
 function App() {
-  const [goods, setGoods] = useState([]);
+  const [goods, setGoods] = useState( );
  
 
-  const createRequest = (data) => {
+  const createRequest = (info) => {
     /* const replaceGoods = data.map( data => { return data; }); */
-    setGoods(data);
+    setGoods(info);
+    console.log(goods);
   };
 
 
