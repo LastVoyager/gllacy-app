@@ -26,7 +26,7 @@ const CartList = (props) => {
                 </CartItem>
                 ))}
             </ul>
-            <span>Итого: {totalSum} грн.</span>
+            <span>Итого: {totalSum21} грн.</span>
             <form className="zalupa">
                 <button className="button" type="submit">Оформить заказ</button>
             </form>
