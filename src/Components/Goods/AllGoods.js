@@ -9,7 +9,7 @@ function AllGoods (props) {
   const [request, setRequest] = useState([ ]);
   
 
-  const formRequest = info => {
+  const formRequest = (info) => {
     if ((request.findIndex(item => item.id === info.id)) < 0) {
       const data = [...request, info]
       setRequest(data);

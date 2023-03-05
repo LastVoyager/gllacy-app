@@ -9,7 +9,7 @@ const CartItem = (props) => {
 
     return (
         <li className={classes['chosen']}>
-            <img src={props.image}/>
+            <img src={props.image} alt=''/>
             <button className={classes['close']} type="button" onClick={deleteHandler}>X</button>
             {props.children}
            {/*  <p>Пломбир с апельсиновьім джемом</p>

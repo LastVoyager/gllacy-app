@@ -3,7 +3,7 @@ import CartItem from './CartItem';
 import './CartList.css'
 
 const CartList = (props) => {
-   /*  const [sum, setSum] = useState( 0 ); */
+    //const [sum, setSum] = useState( 0 );
 
     let totalSum = makeSum ();
     function makeSum () {
@@ -26,7 +26,7 @@ const CartList = (props) => {
                 </CartItem>
                 ))}
             </ul>
-            <span>Итого: {totalSum21} грн.</span>
+            <span>Итого: {totalSum} грн.</span>
             <form className="zalupa">
                 <button className="button" type="submit">Оформить заказ</button>
             </form>

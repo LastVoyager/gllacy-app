@@ -8,7 +8,7 @@ import './@media.css';
 
 
 function App() {
-  const [goods, setGoods] = useState( );
+  const [goods, setGoods] = useState([]);
  
 
   const createRequest = (info) => {

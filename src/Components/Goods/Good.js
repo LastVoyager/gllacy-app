@@ -3,9 +3,9 @@ import  './AllGoods.css';
 
 const Good = (props) => {
 
-    const handleClick = () => {
+    /* const handleClick = () => {
         props.click(props.info)
-    };
+    }; */
 
     return (
         <li className="good">
