@@ -99,7 +99,7 @@ function Main (props)  {
                     <div className="adress-info">
                         <p>Адрес главного офиса<br/>и оффлайн магазина:<br/><b>ул. Большая Конюшенная<br/>19/18, Санкт-Петербург</b></p>
                         <p>Для заказов по телефону:<br/><b>8 812 450-25-25</b><br/>(с 10 до 20 ежедневно)</p>
-                        <form><button className="form-button" href="index.html">Форма обратной связи</button></form>
+                        <button className="form-button" onClick={props.onOpen}>Форма обратной связи</button>
                     </div>
                 </section>
             </div>
