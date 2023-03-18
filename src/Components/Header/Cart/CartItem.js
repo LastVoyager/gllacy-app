@@ -4,17 +4,19 @@ const CartItem = (props) => {
     
     const deleteHandler = () => {
         // setDeleteText('(Deleted!)');
-        props.onDeleteItem(props.id);
+        
+        props.onDeleteItem(props.info.id);
     }; 
 
     return (
         <li className={classes['chosen']}>
-            <img src={props.image} alt=''/>
+            <img src={props.info.image} alt=''/>
             <button className={classes['close']} type="button" onClick={deleteHandler}>X</button>
-            {props.children}
-           {/*  <p>Пломбир с апельсиновьім джемом</p>
-            <p>1.5 кг. х 200грн.</p>
-            <p>300 грн.</p> */}
+            <section>
+                <span className={classes.title}> {props.info.title}</span>
+                <span className={classes.amount}>{props.info.amount}</span>
+                <span className={classes.price}>{props.info.price}</span>
+            </section>
         </li>
     );
 };

@@ -19,14 +19,13 @@ const CartList = (props) => {
                 {props.items.map(info => (
                 <CartItem
                     key={info.id} 
+                    info={info}
                     onDeleteItem={props.onDelete}
-                    image={info.image}
-                    >
-                    {info.title}  {info.price}
+                >
                 </CartItem>
                 ))}
             </ul>
-            <span>Итого: {totalSum} грн.</span>
+            <span className={['total-price']}>Итого: {totalSum} грн.</span>
             <form className="zalupa">
                 <button className="button" type="submit">Оформить заказ</button>
             </form>

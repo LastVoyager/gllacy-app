@@ -1,7 +1,7 @@
 /* cart */
 
 .cart-content {
-  display: none;
+  display: block;
   
   position: absolute;
  
@@ -33,10 +33,11 @@
 }
 
 
-.cart-content span {
+.cart-content .total-price {
   display: inline-block;
   position: relative;
 
+  
   background-color:#f8f7f4;
   width: 100%;
   padding-left: 76%;
@@ -45,7 +46,7 @@
   color: #323232;
 }
 
-.cart-content span::before {
+.cart-content .total-price::before {
   position: absolute;
   content: "";
   background-color: #d1d0ce;

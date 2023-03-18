@@ -17,11 +17,9 @@ function App() {
   };
 
   const [modalShown, setModalShown] = useState(false);
-
   const showModalHandler = () => {
     setModalShown(true);
   };
-
   const hideModalHandler = () => {
     setModalShown(false);
   };

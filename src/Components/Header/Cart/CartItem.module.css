@@ -49,3 +49,26 @@
 .close::after {
   transform: rotate(-45deg);
 }
+
+
+.chosen section {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+.chosen .title {
+  font-size: 18px;
+  font-weight: 400;
+}
+.chosen .amount {
+  color:#ef6441;
+  font-size: 18px;
+  font-weight: 800;
+}
+.chosen .price {
+  font-size: 16px;
+  font-weight: 600;
+  padding-right: 8px;
+}
+
