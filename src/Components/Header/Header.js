@@ -5,7 +5,13 @@ import CartList from './Cart/CartList';
 import './Header.css';
 import './Header_drop-down_comp.css';
 
+
 function Header (props) {
+
+    const numberOfCartGoods = props.items.reduce((curNumb, item) => {
+        return curNumb + item.amount;
+    }, 0);
+
     return (
         <div className="header" id="header">
             <div className="header-container">
@@ -81,7 +87,7 @@ function Header (props) {
                                 </div>
                             </li>
                             <li className="cart">
-                                <a className="cart-button" href="catalog.html">Пусто</a>
+                                <a className="cart-button" href="catalog.html">{numberOfCartGoods}</a>
                                 <CartList items={props.items} onDelete={props.onDeleteItem}></CartList>
                             </li>
                         </ul>
@@ -89,7 +95,7 @@ function Header (props) {
                 </nav>
                 <div className="phone">
                     <p>с 10 до 20 ежедневно</p>
-                    <a className="phone-number" href="tel:+78812)450-25-25">8 812 450-25-25</a>
+                    <a className="phone-number" href="tel:+38050-555-50-50">050-555-50-50</a>
                 </div>
             </div> 
         </div>

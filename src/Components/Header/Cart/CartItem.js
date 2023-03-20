@@ -3,8 +3,6 @@ import classes from './CartItem.module.css';
 const CartItem = (props) => {
     
     const deleteHandler = () => {
-        // setDeleteText('(Deleted!)');
-        
         props.onDeleteItem(props.info.id);
     }; 
 

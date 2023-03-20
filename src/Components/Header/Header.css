@@ -187,7 +187,7 @@
     background-image: url(.././img/svg/basket.svg);
     width: 20px;
     height: 19px;
-    margin-left: -73px;
+    margin-left: -32px;
 }
 .cart:hover .cart-content {
     display: block;
