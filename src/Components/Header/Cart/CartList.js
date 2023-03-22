@@ -1,28 +1,29 @@
-/* import React, {useState} from 'react'; */
+import React, {useContext} from 'react';
 import CartItem from './CartItem';
+import CartContext from '../../../Store/cartContext';
 import './CartList.css'
 
 const CartList = (props) => {
-    //const [sum, setSum] = useState( 0 );
+
+    const {removeItemCartHandler} = useContext(CartContext);
 
     let totalSum = makeSum ();
     function makeSum () {
         const s = props.items.reduce((s,{price}) => s+price,0)
         return s;
     }
-   
     
 
     return (
         <div className="cart-content">
             <ul className="chosen-list">
                 {props.items.map(info => (
-                <CartItem
-                    key={info.id} 
-                    info={info}
-                    /* onDeleteItem={props.onDelete} */
-                >
-                </CartItem>
+                    <CartItem
+                        key={info.id} 
+                        info={info}
+                        click={() => removeItemCartHandler(info.id)} 
+                    >
+                    </CartItem>
                 ))}
             </ul>
             <span className={['total-price']}>Итого: {totalSum} грн.</span>
