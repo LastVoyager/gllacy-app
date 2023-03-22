@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
+import CartContext from './Store/cartContext';
 
 
 import './App.css';
@@ -25,18 +26,20 @@ function App() {
   };
 
 
-  const HandleItemRemove = (id) => {
+  const removeItemCartHandler = (id) => {
     const newList = goods.filter((item) => item.id !== id);
     setGoods(newList);
   };
 
   return (
-    <div className='body'>
-      {modalShown && <Subscribe onClose={hideModalHandler}/>}
-      <Header items={goods} onDeleteItem={HandleItemRemove}></Header>
-      <Main sendData={createRequest} onOpen={showModalHandler}></Main>
-      <footer></footer>
-    </div>
+    <CartContext.Provider value={removeItemCartHandler}>
+      <div className='body'>
+        {modalShown && <Subscribe onClose={hideModalHandler}/>}
+        <Header items={goods} /* onDeleteItem={HandleItemRemove} */></Header>
+        <Main sendData={createRequest} onOpen={showModalHandler}></Main>
+        <footer></footer>
+      </div>
+    </CartContext.Provider>
   );
 }
 

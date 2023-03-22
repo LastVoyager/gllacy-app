@@ -88,7 +88,7 @@ function Header (props) {
                             </li>
                             <li className="cart">
                                 <a className="cart-button" href="catalog.html">{numberOfCartGoods}</a>
-                                <CartList items={props.items} onDelete={props.onDeleteItem}></CartList>
+                                <CartList items={props.items} /* onDelete={props.onDeleteItem} */></CartList>
                             </li>
                         </ul>
                     </div>

@@ -20,7 +20,7 @@ const CartList = (props) => {
                 <CartItem
                     key={info.id} 
                     info={info}
-                    onDeleteItem={props.onDelete}
+                    /* onDeleteItem={props.onDelete} */
                 >
                 </CartItem>
                 ))}
