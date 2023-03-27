@@ -1,27 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Good  from './Good';
 import './AllGoods.css';
+import CartContext from '../../Store/CartProvider';
 import Goods from '../Goods.js';
 
 
 
 function AllGoods (props) {
-  const [request, setRequest] = useState([ ]);
   
-
-  const formRequest = (info) => {
-    if ((request.findIndex(item => item.id === info.id)) < 0) {
-      const data = [...request, info]
-      setRequest(data);
-      props.sendData(data);
-    }
-  }
+  const value = useContext(CartContext);
   
   return (
     <ul className="populars">
       {Goods.slice(0, 4).map(info => (
         <Good
-          click={() => formRequest(info)}
+          click={() => value.formRequest(info)}
           key={info.id} 
           info={info}
           >

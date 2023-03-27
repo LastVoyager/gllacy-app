@@ -45,7 +45,7 @@ function Main (props)  {
                         <a className="button" href="index.html">Хочу шоколадки!</a>
                     </article>
                 </section>
-                <AllGoods sendData={props.sendData}></AllGoods>
+                <AllGoods /* sendData={props.sendData} */></AllGoods>
                 <section className="our-features">
                     <div>
                         <h3>Магазин Глейси - это онлайн и офлайн магазин по продаже мороженого собственного производства на развес.</h3>

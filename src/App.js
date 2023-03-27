@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
-import CartContext from './Store/cartContext';
+import CartProvider from './Store/CartProvider';
 
 
 import './App.css';
@@ -10,12 +10,12 @@ import Subscribe from './Components/Subscribe/Subscribe';
 
 
 function App() {
-  const [goods, setGoods] = useState([]);
+  /* const [goods, setGoods] = useState([]);
  
   const createRequest = (info) => {
-    /* const replaceGoods = data.map( data => { return data; }); */
+    //const replaceGoods = data.map( data => { return data; });
     setGoods(info);
-  };
+  }; */
 
   const [modalShown, setModalShown] = useState(false);
   const showModalHandler = () => {
@@ -26,20 +26,20 @@ function App() {
   };
 
 
-  const removeItemCartHandler = (id) => {
+  /* const removeItemCartHandler = (id) => {
     const newList = goods.filter((item) => item.id !== id);
     setGoods(newList);
-  };
+  }; */
 
   return (
-    <CartContext.Provider value={removeItemCartHandler}>
+    <CartProvider>
       <div className='body'>
         {modalShown && <Subscribe onClose={hideModalHandler}/>}
-        <Header items={goods} /* onDeleteItem={HandleItemRemove} */></Header>
-        <Main sendData={createRequest} onOpen={showModalHandler}></Main>
+        <Header /* items={goods} */></Header>
+        <Main /* sendData={createRequest} */ onOpen={showModalHandler}></Main>
         <footer></footer>
       </div>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 

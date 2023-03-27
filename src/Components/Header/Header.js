@@ -8,9 +8,9 @@ import './Header_drop-down_comp.css';
 
 function Header (props) {
 
-    const numberOfCartGoods = props.items.reduce((curNumb, item) => {
+    /* const numberOfCartGoods = props.items.reduce((curNumb, item) => {
         return curNumb + item.amount;
-    }, 0);
+    }, 0); */
 
     return (
         <div className="header" id="header">
@@ -87,8 +87,8 @@ function Header (props) {
                                 </div>
                             </li>
                             <li className="cart">
-                                <a className="cart-button" href="catalog.html">{numberOfCartGoods}</a>
-                                <CartList items={props.items} /* onDelete={props.onDeleteItem} */></CartList>
+                                <a className="cart-button" href="catalog.html">{/* {numberOfCartGoods} */}0</a>
+                                {/* <CartList/> */}
                             </li>
                         </ul>
                     </div>
