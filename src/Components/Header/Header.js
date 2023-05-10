@@ -88,7 +88,7 @@ function Header (props) {
                             </li>
                             <li className="cart">
                                 <a className="cart-button" href="catalog.html">{/* {numberOfCartGoods} */}0</a>
-                                {/* <CartList/> */}
+                                <CartList />
                             </li>
                         </ul>
                     </div>
