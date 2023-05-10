@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
 import Good  from './Good';
 import './AllGoods.css';
-import CartContext from '../../Store/CartProvider';
+import { CartContext } from '../../Store/CartProvider';
 import Goods from '../Goods.js';
 
 
@@ -9,10 +9,10 @@ import Goods from '../Goods.js';
 function AllGoods (props) {
   
   const value = useContext(CartContext);
-  
+
   return (
     <ul className="populars">
-      {Goods.slice(0, 4).map(info => (
+      {value.goods.slice(0, 4).map(info => (
         <Good
           click={() => value.formRequest(info)}
           key={info.id} 
