@@ -1,17 +1,20 @@
+import React, {useContext, useState} from 'react';
 import logo from '.././img/svg/logo.svg';
-
 import CartList from './Cart/CartList';
-
+import { CartContext } from '../../Store/CartProvider';
 import './Header.css';
 import './Header_drop-down_comp.css';
 
 
 function Header (props) {
+    const value = useContext(CartContext);
 
-    /* const numberOfCartGoods = props.items.reduce((curNumb, item) => {
-        return curNumb + item.amount;
-    }, 0); */
+    const emptyCart = <a className="cart-button" href="catalog.html">{value.request.length}</a>;
+    const fullCart = <a className="cart-button-red" href="catalog.html">{value.request.length}</a>;
 
+    let cartStateUpdater = (value.request.length > 0) ? fullCart : emptyCart;
+           
+   
     return (
         <div className="header" id="header">
             <div className="header-container">
@@ -87,8 +90,8 @@ function Header (props) {
                                 </div>
                             </li>
                             <li className="cart">
-                                <a className="cart-button" href="catalog.html">{/* {numberOfCartGoods} */}0</a>
-                                <CartList />
+                                {cartStateUpdater}
+                                <CartList/>
                             </li>
                         </ul>
                     </div>

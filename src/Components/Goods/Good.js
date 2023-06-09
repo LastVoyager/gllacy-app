@@ -3,10 +3,6 @@ import  './AllGoods.css';
 
 const Good = (props) => {
 
-    /* const handleClick = () => {
-        props.click(props.info)
-    }; */
-
     return (
         <li className="good">
             <div className="image good-1 hit">

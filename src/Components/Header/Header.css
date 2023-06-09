@@ -181,17 +181,43 @@
     min-width: 14px;
     min-height: 16px;
 }
-.right-option .cart-button::after {
+
+.cart-button-red{
+    min-width: 14px;
+    min-height: 16px;
+}
+
+.right-option .cart-button::before {
     position: absolute;
     content: "";
     background-image: url(.././img/svg/basket.svg);
     width: 20px;
     height: 19px;
-    margin-left: -32px;
+    margin-left: -28px;
 }
+
+.right-option .cart-button-red::before {
+    position: absolute;
+    content: "";
+    background-image: url(.././img/svg/basket-red.svg);
+    width: 20px;
+    height: 19px;
+    margin-left: -28px;
+}
+
+.cart:hover .cart-button::before {
+    position: absolute;
+    content: "";
+    background-image: url(.././img/svg/basket-black.svg);
+    width: 20px;
+    height: 19px;
+    margin-left: -28px;
+}
+
 .cart:hover .cart-content {
     display: block;
 }
+
 .cart:hover  {
     background-color:#f8f7f4;
 }
