@@ -5,7 +5,7 @@ import { CartContext } from '../../../Store/CartProvider';
 
 const CartList = () => {
     const value = useContext(CartContext);
-
+    
     let totalSum = value.request.reduce((s, { price }) => s+price,0);
 
     return (
@@ -14,7 +14,8 @@ const CartList = () => {
                 {value.request.map(info => (
                     <CartItem
                         key={info.id} 
-                        info={info} 
+                        info={info}
+                       /*  itemAmount={value.cartAmount} */
                     >
                     </CartItem>
                 ))}

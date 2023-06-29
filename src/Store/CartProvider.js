@@ -1,20 +1,33 @@
-import React, {useContext, useState} from "react";
+import React, {useState, useEffect} from "react";
 import Goods from "../Components/Goods";
 
 export const CartContext = React.createContext();
 
 const CartProvider = (props) => {
     const [goods, setGoods] = useState(Goods);
-    
     const [request, setRequest] = useState([ ]);
+    const [totalCartAmount, setTotalCartAmount] = useState( 0 );
+    
 
     //add to cart from index.html
-    const formRequest = (info) => {
-        if ((request.findIndex(item => item.id === info.id)) < 0) {
-          const data = [...request, info]
-          setRequest(data);
+    const formRequest = (info) => { 
+        const isInCart= request.findIndex(item => item.id === info.id);
+        const data = [...request];
+        
+        if (isInCart > -1) {
+            data[isInCart].amount++;
+            
+        } else {
+            data.push({...info, amount: 1})
         }
+
+        let sum = data.reduce(function(prev, current) {
+            return prev + +current.amount
+          }, 0);
+          
+        return (setRequest(data), setTotalCartAmount(sum));
     }
+    
 
     //remove from cart
     const removeItemCartHandler = (id) => {
@@ -27,6 +40,7 @@ const CartProvider = (props) => {
         formRequest,
         goods,
         request,
+        totalCartAmount,
     };
 
     return (

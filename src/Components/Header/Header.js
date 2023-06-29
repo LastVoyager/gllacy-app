@@ -8,13 +8,7 @@ import './Header_drop-down_comp.css';
 
 function Header (props) {
     const value = useContext(CartContext);
-
-    const emptyCart = <a className="cart-button" href="catalog.html">{value.request.length}</a>;
-    const fullCart = <a className="cart-button-red" href="catalog.html">{value.request.length}</a>;
-
-    let cartStateUpdater = (value.request.length > 0) ? fullCart : emptyCart;
            
-   
     return (
         <div className="header" id="header">
             <div className="header-container">
@@ -90,7 +84,7 @@ function Header (props) {
                                 </div>
                             </li>
                             <li className="cart">
-                                {cartStateUpdater}
+                                <a className={(value.request.length > 0) ? "cart-button-red" : "cart-button"} href="catalog.html">{value.totalCartAmount}</a>
                                 <CartList/>
                             </li>
                         </ul>

@@ -23,11 +23,3 @@ function AllGoods (props) {
 }
 
 export default AllGoods;
-
-//const request = useRef({ });
-/* const formRequest = (info) => {
-    request.current[info.id] = info;
-    
-    props.sendData(request)
-    console.log(request)
-  }; */
