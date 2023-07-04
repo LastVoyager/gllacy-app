@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import CartItem from './CartItem';
 import './CartList.css'
 import { CartContext } from '../../../Store/CartProvider';
@@ -6,7 +6,13 @@ import { CartContext } from '../../../Store/CartProvider';
 const CartList = () => {
     const value = useContext(CartContext);
     
-    let totalSum = value.request.reduce((s, { price }) => s+price,0);
+    /* let totalSum = value.request.reduce((s, { price }) => s + price, 0); */
+    
+
+    const totalSum = value.request.reduce((acc, item) => {
+        acc += item.price * item.amount; 
+        return acc;
+    }, 0); 
 
     return (
         <div className="cart-content">
@@ -20,7 +26,7 @@ const CartList = () => {
                     </CartItem>
                 ))}
             </ul>
-            <span className={['total-price']}>Итого: {totalSum} грн.</span>
+            <span className="total-price">Итого: {totalSum} грн.</span>
             <form className="zalupa">
                 <button className="button" type="submit">Оформить заказ</button>
             </form>

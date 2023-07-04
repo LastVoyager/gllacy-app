@@ -5,21 +5,20 @@ import { CartContext } from '../../../Store/CartProvider';
 
 const CartItem = (props) => {
     const { removeItemCartHandler } = useContext(CartContext);
-    /* const deleteHandler = () => {
-        props.onDeleteItem(props.info.id);
-    };  */
+    
+    let sameItemPrice =  props.info.amount * props.info.price;
 
     return (
         <li className={classes['chosen']}>
-            <img src={props.info.image} alt=''/>
+            <img src={props.info.image} alt={props.info.title}/>
             <button 
                 className={classes['close']} 
                 type="button" 
-                onClick={() => removeItemCartHandler(props.info.id)}>X</button>
+                onClick={() => removeItemCartHandler(props.info)}>X</button>
             <section>
-                <span className={classes.title}> {props.info.title}</span>
+                <span className={classes.title}>{props.info.title}</span>
                 <span className={classes.amount}>{props.info.amount}</span>
-                <span className={classes.price}>{props.info.price}</span>
+                <span className={classes.price}>{sameItemPrice}</span>
             </section>
         </li>
     );

@@ -10,7 +10,7 @@ function AllGoods (props) {
 
   return (
     <ul className="populars">
-      {value.goods.slice(0, 4).map(info => (
+      {value.Goods.slice(0, 4).map(info => (
         <Good
           click={() => value.formRequest(info)}
           key={info.id} 

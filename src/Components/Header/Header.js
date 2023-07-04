@@ -84,7 +84,7 @@ function Header (props) {
                                 </div>
                             </li>
                             <li className="cart">
-                                <a className={(value.request.length > 0) ? "cart-button-red" : "cart-button"} href="catalog.html">{value.totalCartAmount}</a>
+                                <a className={(value.request.length > 0) ? "cart-button-red" : "cart-button"} href="catalog.html">{value.sameItemsIndex}</a>
                                 <CartList/>
                             </li>
                         </ul>

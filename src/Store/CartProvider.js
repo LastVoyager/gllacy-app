@@ -4,10 +4,16 @@ import Goods from "../Components/Goods";
 export const CartContext = React.createContext();
 
 const CartProvider = (props) => {
-    const [goods, setGoods] = useState(Goods);
     const [request, setRequest] = useState([ ]);
-    const [totalCartAmount, setTotalCartAmount] = useState( 0 );
+    const [sameItemsIndex, setSameItemsIndex] = useState( 0 );
     
+    //test useEffect just in case.
+    useEffect(()=> {
+        if (sameItemsIndex > 2) {
+            console.log('more then two')
+        }
+    }, [sameItemsIndex]);
+
 
     //add to cart from index.html
     const formRequest = (info) => { 
@@ -25,22 +31,37 @@ const CartProvider = (props) => {
             return prev + +current.amount
           }, 0);
           
-        return (setRequest(data), setTotalCartAmount(sum));
+        return (setRequest(data), setSameItemsIndex(sum));
     }
     
 
     //remove from cart
-    const removeItemCartHandler = (id) => {
-        const newList = request.filter((item) => item.id !== id);
-        setRequest(newList);
+    const removeItemCartHandler = (info) => {
+
+        const sameIndex = request.findIndex (item => item.id === info.id);
+        const data = [...request];
+
+        if (data[sameIndex].amount >= 2 ) {
+
+            data[sameIndex].amount--;
+        } else {
+            data.splice(sameIndex,1);
+        }
+
+        const sumMinus = data.reduce((prev, current) => prev + Number(current.amount), 0);
+
+        setRequest(data);
+        setSameItemsIndex(sumMinus);
+    
+        return ;
     };
 
     const value = {
         removeItemCartHandler,
         formRequest,
-        goods,
+        Goods,
         request,
-        totalCartAmount,
+        sameItemsIndex,
     };
 
     return (
