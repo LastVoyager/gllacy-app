@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
 import CartProvider from './Store/CartProvider';
+import Footer from './Components/Footer/Footer';
 
 
 import './App.css';
@@ -23,9 +24,9 @@ function App() {
     <CartProvider>
       <div className='body'>
         {modalShown && <Subscribe onClose={hideModalHandler}/>}
-        <Header /* items={goods} */></Header>
-        <Main /* sendData={createRequest} */ onOpen={showModalHandler}></Main>
-        <footer></footer>
+        <Header></Header>
+        <Main onOpen={showModalHandler}></Main>
+        <Footer></Footer>
       </div>
     </CartProvider>
   );
