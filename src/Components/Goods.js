@@ -4,7 +4,7 @@ import image2 from './img/image2.png';
 import image3 from './img/image3.png';
 import image4 from './img/image4.png';
 
-const Goods = [
+const goods = [
   {
     image: image1,
     title: 'Ice cream with orange jam',
@@ -42,4 +42,4 @@ const Goods = [
   },
 ];
 
-export default  Goods;
+export default  goods;

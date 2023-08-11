@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from "react";
-import Goods from "../Components/Goods";
+import React, {useState, useEffect, useCallback} from "react";
+/* import goods from "../Components/Goods"; */
 
 export const CartContext = React.createContext();
 
 const CartProvider = (props) => {
+    const [goods, setGoods] = useState([ ]);
     const [request, setRequest] = useState([ ]);
     const [sameItemsIndex, setSameItemsIndex] = useState( 0 );
     
@@ -14,6 +15,20 @@ const CartProvider = (props) => {
         }
     }, [sameItemsIndex]);
 
+
+    const fetchData = useCallback (async() => {
+        const response = await fetch ('https://localhost:4000/goods');
+        const data = await response.json();
+        setGoods(data);
+    }, []);
+
+    useEffect(() => {
+        fetchData();
+      }, [fetchData]); 
+
+      /* const fetchData = () => {
+        fetch ('https://localhost:4000/goods');
+      }; */
 
     //add to cart from index.html
     const formRequest = (info) => { 
@@ -59,7 +74,7 @@ const CartProvider = (props) => {
     const value = {
         removeItemCartHandler,
         formRequest,
-        Goods,
+        goods,
         request,
         sameItemsIndex,
     };
