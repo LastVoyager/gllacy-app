@@ -17,7 +17,7 @@ const CartProvider = (props) => {
 
 
     const fetchData = useCallback (async() => {
-        const response = await fetch ('https://localhost:4000/goods');
+        const response = await fetch (`${process.env.REACT_APP_SERVER_URL}/api/goods`);
         const data = await response.json();
         setGoods(data);
     }, []);

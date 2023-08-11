@@ -4,11 +4,11 @@ const router = express.Router();
 router.get('/goods', (req, res) => {
   const goods = [
     {
-      "image": "img/image1.png",
-      "title": "Ice cream with orange jam",
-      "amount": "1",
-      "price": "200",
-      "id": 1,
+      image: "img/image1.png",
+      title: "Ice cream with orange jam",
+      amount: 1,
+      price: 200,
+      id: 1,
     },
     {
       "image": "img/image2.png",
