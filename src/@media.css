@@ -25,7 +25,7 @@
         top:-570px;
         left: 50%;
     }
-  }
+}
 
 @media (max-width:900px) {
 
@@ -70,63 +70,13 @@
         font-size: 22px;
         line-height: 24px;
     }
-    
-    .options{
-        display: none; 
-    }
-    .header-burger {
-        display: block;
-        position: relative;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-    }
-    .header-burger ::after,
-    .header-burger ::before {
-        content: "";
-        background-color: #f8f7f4;
-        position: absolute;
-        width: 100%;
-        height: 2px;
-    }
-    .header-burger ::before{
-        top: 10px;
-    }
-    .header-burger ::after {
-        bottom: 10px;
-    }
-    .header-burger span {
-        position: absolute;
-        background-color: #f8f7f4;
-        left: 0px;
-        width: 100%;
-        height: 2px;
-        top: 16px;
-        transition: all 0.3s ease 0s;
-    }
-    .header-burger.burger-cross span {
-        transform: scale(0);
-    }
 
-    .header-burger.burger-cross::after,
-    .header-burger.burger-cross::before {
-        content: "";
-        background-color: #f8f7f4;
-        position: absolute;
-        width: 100%;
-        height: 4px;
-        transition: all 3s ease 0s;
+
+    /*OPTIONS isSHOWN*/
+    .options {
+        display: none;
     }
-    .burger-cross::after {
-        top: 9px;
-        transform: rotate(45deg);
-    }
-    .burger-cross::before{
-        top: 9px;
-        transform: rotate(-45deg);
-    }
-    
-    .options.burger-active {
+    .options {
         position: absolute;
         display: block;
         text-align: center;
@@ -137,9 +87,9 @@
         width: 290px;
         min-height: auto;
     }
-    
-    .options.burger-active .right-option,
-    .options.burger-active .left-option {
+
+    .options .right-option,
+    .options .left-option {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -147,16 +97,16 @@
         margin: 0px;
         padding: 0px;
     }
-    .options.burger-active .left-option li {
+    .options .left-option li {
         position: relative;
         width: 100%;
         padding: 15px 95px;
         background-color: #a8c8b7;
     }
-    .options.burger-active .left-option li:nth-child(2n) {background-color: #c8eed9;}
-    .options.burger-active .left-option li:nth-child(2n) .dropbtn {background-color: #c8eed9;}
-
-    .options.burger-active .dropbtn{
+    .options .left-option li:nth-child(2n) {background-color: #c8eed9;}
+    .options .left-option li:nth-child(2n) .dropbtn {background-color: #c8eed9;}
+    
+    .options .dropbtn{
         display: inline-block;
         background-color: #a8c8b7;
         color: #323232;
@@ -166,6 +116,39 @@
         text-decoration: none;
     }
     
+    .options .dropdown-content a {
+        padding: 10px 40px;
+    }
+    .options .dropdown-content p {
+        margin: 0px;
+    }
+    
+    .options .right-option li {
+        position: relative;
+        width: 100%;
+        padding: 15px 95px;
+        margin: 0px;
+        background-color: #c8eed9;
+        border-radius: 0px;
+    }
+    .options .right-option li:nth-child(2n) { background-color: #a8c8b7;}
+    .options .right-option li:nth-child(2n) .dropbtn { background-color: #a8c8b7;}
+    
+    .options .right-option .search-button {
+        margin-top: 0px;
+        max-width: 84px;
+        max-height: 16px;
+        background-color: #c8eed9;
+    }
+    .options .cart-content {  position: fixed;right: 0;left: 0; margin: 200px auto;}
+    .options .enter-content,
+    .options .search-content {
+        position: fixed;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
     .dropdown-content {
         position: relative;
         display: none;
@@ -177,7 +160,7 @@
         color: #323232;
         font-size: 14px;
         line-height: 16px;
-
+    
         min-height: 90px;
         min-width: 290px;
         border-radius: 0px;
@@ -188,41 +171,9 @@
         top: 17px;
         right: 96px;
     }
-    .options.burger-active .dropdown-content a {
-        padding: 10px 40px;
-    }
-    .options.burger-active .dropdown-content p {
-       margin: 0px;
-    }
-
-    .options.burger-active .right-option li {
-        position: relative;
-        width: 100%;
-        padding: 15px 95px;
-        margin: 0px;
-        background-color: #c8eed9;
-        border-radius: 0px;
-    }
-    .options.burger-active .right-option li:nth-child(2n) { background-color: #a8c8b7;}
-    .options.burger-active .right-option li:nth-child(2n) .dropbtn { background-color: #a8c8b7;}
-
-    .options.burger-active .right-option .search-button {
-        margin-top: 0px;
-        max-width: 84px;
-        max-height: 16px;
-        background-color: #c8eed9;
-    }
-    .options.burger-active .cart-content {  position: fixed;right: 0;left: 0; margin: 200px auto;}
-    .options.burger-active .enter-content,
-    .options.burger-active .search-content {
-        position: fixed;
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
 
 
- /* M A I N */
+    /* M A I N */
     
     .main-container {
         width:100%;
@@ -263,7 +214,6 @@
     .slider-point-3 + span {
         margin-left: 60px;
     }
-
 
 
     .main-proposition form {margin-bottom: 5%;}

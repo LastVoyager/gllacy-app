@@ -1,13 +1,22 @@
-import React, {useContext, useState} from 'react';
+import React, {useState, useContext} from 'react';
 import logo from '.././img/svg/logo.svg';
 import CartList from './Cart/CartList';
+import BurgerButton from './Buttons/BurgerButton';
+
 import { CartContext } from '../../Store/CartProvider';
+
 import './Header.css';
 import './Header_drop-down_comp.css';
 
 
+
 function Header (props) {
+    const [click, setClick] = useState(true);
     const value = useContext(CartContext);
+
+    const clickHandler = () => {
+        setClick((click) => !click);
+    };
            
     return (
         <div className="header" id="header">
@@ -16,10 +25,8 @@ function Header (props) {
                     <a className="main-logo" href="index.html">
                        <img src={logo} alt={'logo'}></img> {/* added closing tag */}
                     </a>
-                    <div className="header-burger">
-                        <span></span>
-                    </div>
-                    <div className="options">
+                    <BurgerButton onClick={clickHandler} clicked={click}/>
+                    <div className={(click) ? "options" :  "options"}>
                         <ul className="left-option">
                             <li className="dropdown" name={'first'}>            {/* name value was changed */}
                                 <a href="catalog.html" className="dropbtn">Каталог</a>
