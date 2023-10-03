@@ -3,7 +3,7 @@ import './BurgerButton.css';
 
 function BurgerButton  (props) {
   return ( 
-      <div className={(props.clicked) ? "burger-strings" : "burger-cross"} onClick={props.onClick}>
+      <div className={(props.clicked) ? "burger-cross" : "burger-strings"} onClick={props.onClick}>
           <span></span>
       </div>
   );

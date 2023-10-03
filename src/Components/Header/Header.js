@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import logo from '.././img/svg/logo.svg';
 import CartList from './Cart/CartList';
 import BurgerButton from './Buttons/BurgerButton';
@@ -11,12 +11,33 @@ import './Header_drop-down_comp.css';
 
 
 function Header (props) {
-    const [click, setClick] = useState(true);
+    const [click, setClick] = useState(false);
+    const [windowSize, setWindowSize] = useState(window.innerWidth);
     const value = useContext(CartContext);
 
     const clickHandler = () => {
         setClick((click) => !click);
     };
+
+
+    useEffect(() => {
+
+        const handleWindowResize = () => {
+          setWindowSize(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleWindowResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleWindowResize);
+        };
+
+    }, []);
+
+    let classToggle =  (click) ? "options-shown" : "options";
+    if (windowSize >= 900) {
+        classToggle = "options";
+    }
            
     return (
         <div className="header" id="header">
@@ -26,7 +47,7 @@ function Header (props) {
                        <img src={logo} alt={'logo'}></img> {/* added closing tag */}
                     </a>
                     <BurgerButton onClick={clickHandler} clicked={click}/>
-                    <div className={(click) ? "options" :  "options"}>
+                    <div className={classToggle}>
                         <ul className="left-option">
                             <li className="dropdown" name={'first'}>            {/* name value was changed */}
                                 <a href="catalog.html" className="dropbtn">Каталог</a>

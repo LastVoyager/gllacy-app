@@ -26,11 +26,6 @@ function Main (props)  {
                     </div>
                     <h1>Крем-брюле и пломбир<br/>с малиновым джемом</h1>
                     <form><button className="button">Давайте оба!</button></form>
-                    {/* <!--<ul className="radio-btn">
-                        <li><input type="radio" checked></input></li>
-                        <li><input type="radio"></input></li>
-                        <li><input type="radio"></input></li>
-                    </ul>--> */}
                 </section>
                 <section className="proposition">
                     <article className="left">
